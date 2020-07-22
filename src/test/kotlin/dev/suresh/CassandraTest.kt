@@ -1,8 +1,8 @@
 package dev.suresh
 
 import com.datastax.driver.core.*
-import org.junit.*
-import org.junit.Assert.assertEquals
+import org.junit.jupiter.api.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.testcontainers.containers.*
 import org.testcontainers.junit.jupiter.*
 import org.testcontainers.junit.jupiter.Container
@@ -13,8 +13,9 @@ import org.testcontainers.utility.*
 class CassandraTest {
 
     @Container
-    val cassandra = CassandraContainer<Nothing>(DockerImageName.parse("cassandra:latest"))
-        .apply { start() }
+    val cassandra = CassandraContainer<Nothing>(
+        DockerImageName.parse("cassandra:latest")
+    ).apply { start() }
 
     @Test
     fun `Test Cassandra connection`() {

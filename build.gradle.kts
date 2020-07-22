@@ -10,6 +10,15 @@ repositories {
     mavenCentral()
 }
 
+tasks {
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events("passed", "skipped", "failed")
+        }
+    }
+}
+
 dependencies {
     implementation(kotlin("stdlib"))
     testImplementation(enforcedPlatform("org.junit:junit-bom:5.6.2"))
