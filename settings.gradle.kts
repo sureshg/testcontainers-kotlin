@@ -1,2 +1,2 @@
-rootProject.name = "cassandra-test-containers"
+rootProject.name = "testcontainers-kotlin"
 
