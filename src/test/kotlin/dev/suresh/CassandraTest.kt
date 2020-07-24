@@ -1,6 +1,5 @@
 package dev.suresh
 
-import com.datastax.driver.core.*
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.testcontainers.containers.*
@@ -17,21 +16,21 @@ class CassandraTest {
         DockerImageName.parse("cassandra:latest")
     ).apply { start() }
 
+
     @Test
-    fun `Test Cassandra connection`() {
+    fun `Test Cassandra Keyspace`() {
         val cluster = cassandra.cluster
-        println(cluster)
+        val keyspaceName = "test"
+        println("Connecting to Cassandra cluster: ${cluster.clusterName}")
         cluster.connect().use { session ->
+            println("Creating keyspace: $keyspaceName")
             session.execute(
                 """
-                    CREATE KEYSPACE IF NOT EXISTS test WITH replication = 
-                    {'class':'SimpleStrategy','replication_factor':'1'};
-                    """.trimIndent()
+                CREATE KEYSPACE IF NOT EXISTS $keyspaceName WITH replication = 
+                {'class':'SimpleStrategy','replication_factor':'1'};
+                """.trimIndent()
             )
-            val keySpaces = session.cluster
-                .metadata
-                .keyspaces
-                .filter { km: KeyspaceMetadata -> km.name == "test" }
+            val keySpaces = session.cluster.metadata.keyspaces.filter { it.name == keyspaceName }
             println(keySpaces)
             assertEquals(1, keySpaces.size)
         }
