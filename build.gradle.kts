@@ -15,6 +15,7 @@ tasks {
         useJUnitPlatform()
         testLogging {
             events("passed", "skipped", "failed")
+            showStandardStreams = true
         }
     }
 }
@@ -29,4 +30,5 @@ dependencies {
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:testcontainers")
     testImplementation("org.testcontainers:cassandra")
+    testImplementation("org.slf4j:slf4j-simple:1.7.30")
 }
