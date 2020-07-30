@@ -1,10 +1,11 @@
 plugins {
     java
-    kotlin("jvm") version "1.3.72"
+    kotlin("jvm") version "1.4.0-rc"
+    id("com.github.ben-manes.versions")  version "0.29.0"
 }
 
 group = "dev.suresh"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
