@@ -1,7 +1,7 @@
 plugins {
     java
-    kotlin("jvm") version "1.4.0-rc"
-    id("com.github.ben-manes.versions")  version "0.29.0"
+    kotlin("jvm") version "1.4.0"
+    id("com.github.ben-manes.versions") version "0.29.0"
 }
 
 group = "dev.suresh"
@@ -24,7 +24,7 @@ tasks {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    testImplementation(enforcedPlatform("org.junit:junit-bom:5.6.2"))
+    testImplementation(enforcedPlatform("org.junit:junit-bom:5.7.0-RC1"))
     testImplementation(enforcedPlatform("org.testcontainers:testcontainers-bom:1.15.0-rc1"))
 
     testImplementation("org.junit.jupiter:junit-jupiter")
