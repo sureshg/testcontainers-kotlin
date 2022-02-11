@@ -1,7 +1,7 @@
 plugins {
     java
-    kotlin("jvm") version "1.4.10"
-    id("com.github.ben-manes.versions") version "0.33.0"
+    kotlin("jvm") version "1.6.20-M1"
+    id("com.github.ben-manes.versions") version "0.42.0"
 }
 
 group = "dev.suresh"
@@ -24,12 +24,12 @@ tasks {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
-    testImplementation(enforcedPlatform("org.junit:junit-bom:5.7.0-RC1"))
-    testImplementation(enforcedPlatform("org.testcontainers:testcontainers-bom:1.15.0-rc2"))
+    testImplementation(enforcedPlatform("org.junit:junit-bom:5.8.2"))
+    testImplementation(enforcedPlatform("org.testcontainers:testcontainers-bom:1.16.3"))
 
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:testcontainers")
     testImplementation("org.testcontainers:cassandra")
-    testImplementation("org.slf4j:slf4j-simple:1.7.30")
+    testImplementation("org.slf4j:slf4j-simple:2.0.0-alpha6")
 }

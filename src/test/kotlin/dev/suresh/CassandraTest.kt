@@ -12,10 +12,7 @@ import org.testcontainers.utility.*
 class CassandraTest {
 
     @Container
-    val cassandra = CassandraContainer<Nothing>(
-        DockerImageName.parse("cassandra:latest")
-    ).apply { start() }
-
+    val cassandra = CassandraContainer(DockerImageName.parse("cassandra:latest"))
 
     @Test
     fun `Test Cassandra Keyspace`() {
