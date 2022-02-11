@@ -15,7 +15,7 @@ $ ./gradlew clean test
 [kt_img]: https://img.shields.io/github/release/JetBrains/kotlin.svg?label=Kotlin&logo=kotlin&style=for-the-badge
 
 [java_url]: https://jdk.java.net/
-[java_img]: https://img.shields.io/badge/OpenJDK-jdk--11-red?logo=java&style=for-the-badge&logoColor=red
+[java_img]: https://img.shields.io/badge/OpenJDK-jdk--17-red?logo=java&style=for-the-badge&logoColor=red
 
 [gha_url]: https://github.com/sureshg/testcontainers-kotlin/actions
 [gha_img]: https://github.com/sureshg/testcontainers-kotlin/workflows/Gradle%20Build/badge.svg?branch=master              
